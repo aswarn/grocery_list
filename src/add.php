@@ -4,7 +4,8 @@ $groceries='';
 $event='';
 $store='';
 $error=array('event'=>'','store'=>'','groceries'=>'');
-  if(isset($_POST['submit'])){
+  if(isset($_POST['submit']))
+  {
       $event=$_POST['event'];
       $store=$_POST['store'];
       if(empty($event))
@@ -28,7 +29,7 @@ $error=array('event'=>'','store'=>'','groceries'=>'');
            $sql="INSERT INTO lists(event,store,groceries) VALUES('$event','$store','$groceries')";
            if(mysqli_query($conn,$sql))
            {
-
+                    header('Location:index.php');
            }
            else{
                echo 'query error:' . mysqli_error($conn);

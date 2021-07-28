@@ -8,7 +8,7 @@ if(isset($_POST['delete']))
         echo 'query error:'. mysqli_error($conn);
         
 }
-$sql='SELECT id,event,store,groceries FROM lists ORDER BY time_of_creation';
+$sql='SELECT id,event,store,groceries FROM lists ORDER BY time_created';
 $result=mysqli_query($conn,$sql);
 $lists=mysqli_fetch_all($result,MYSQLI_ASSOC);
 mysqli_free_result($result);
